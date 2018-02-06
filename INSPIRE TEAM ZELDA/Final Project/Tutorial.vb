@@ -362,18 +362,28 @@
         End If
         If picHitbox2.Location.Y > 375 Then
             picHitbox2.Top -= 30
+
         ElseIf picHitbox2.Location.Y < 545 Then
             picHitbox2.Top += 175
         End If
     End Sub
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Dim number As Integer
+
+        Randomize()
+        ' The program will generate a number from 0 to 50
+        number = Int(Rnd() * 50) + 15
+
+
         If picMonster1.Location.X > 50 Then
-            picMonster1.Left -= 50
+            picMonster1.Left -= number
         ElseIf picMonster1.Location.X < 300 Then
             picMonster1.Left += 375
-        End If
-        If picHitbox1.Location.X > 50 Then
-            picHitbox1.Left -= 50
+
+            If picHitbox1.Location.X > 50 Then
+                picHitbox1.Left -= 50
+            End If
+
         ElseIf picHitbox1.Location.X < 300 Then
             picHitbox1.Left += 375
         End If
